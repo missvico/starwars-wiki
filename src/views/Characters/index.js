@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import CharacterCard from './CharacterCard';
+import { Link } from "react-router-dom";
 
 export default () => {
     const [list, setList] = useState([]);
@@ -11,6 +11,7 @@ export default () => {
                 url:  `https://swapi.dev/api/people`}
             )
             setList(characterListResponse.data.results)
+            console.log(characterListResponse.data.results)
         }catch(error){
             console.log(error)
         }
@@ -19,8 +20,9 @@ export default () => {
     return(
         <section>
             {list.map((character)=>{
+                let id = character.url.split("/")[5]
                 return (
-                    <CharacterCard character={character}/>
+                    <p><Link to={`/characters/${id}`} >{character.name}</Link></p>
                 )
             })}
         </section>
