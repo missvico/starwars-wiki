@@ -10,25 +10,26 @@ import Form from './views/Form/index'
 function App() {
   return (
     <BrowserRouter>
-    <Form></Form>
-    {/* <div className="App">
+    <div className="App">
           <h1>Star Wars Wiki</h1>
       <nav>
         <ul className="nav-list">
           <li className="nav-item"><Link to="/characters">Characters</Link></li>
           <li className="nav-item"><Link to="/planets">Planets</Link></li>
+          <li className="nav-item"><Link to="/form">Login</Link></li>
         </ul>
-      </nav> */}
-      {/* <Switch>
+      </nav>
+      <Switch>
         <Route path="/planets"><Planets/></Route>
         <Route path="/characters/:id"><SingleCharacter/></Route>
         <Route path="/characters"><Characters/></Route>
+        <Route path="/form"><Form/></Route>
         <Route path="/"><p> Not Found</p></Route>
       </Switch>
       <Route exact path="/">
         <Redirect to="/characters" />
-      </Route> */}
-    {/* </div> */}
+      </Route>
+     </div>
     </BrowserRouter>
   );
 }
